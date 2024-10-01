@@ -1,7 +1,7 @@
 #!/bin/bash
 
 Nochmalspielen(){
-zahl=$(($RANDOM % 10+1))
+zahl=$(($RANDOM % 100+1))
 zahlE=0
 
 
