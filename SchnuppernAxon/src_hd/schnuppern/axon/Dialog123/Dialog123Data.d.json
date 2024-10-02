@@ -1,0 +1,11 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/data-class/11.4.0/data-class.json",
+  "simpleName" : "Dialog123Data",
+  "namespace" : "schnuppern.axon.Dialog123",
+  "isBusinessCaseData" : false,
+  "fields" : [ {
+    "name" : "shop",
+    "type" : "schnuppern.axon.shop",
+    "modifiers" : [ "PERSISTENT" ]
+  } ]
+}

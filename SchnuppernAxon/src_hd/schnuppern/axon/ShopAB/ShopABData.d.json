@@ -1,0 +1,11 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/data-class/11.4.0/data-class.json",
+  "simpleName" : "ShopABData",
+  "namespace" : "schnuppern.axon.ShopAB",
+  "isBusinessCaseData" : false,
+  "fields" : [ {
+    "name" : "shop",
+    "type" : "schnuppern.axon.shop",
+    "modifiers" : [ "PERSISTENT" ]
+  } ]
+}
