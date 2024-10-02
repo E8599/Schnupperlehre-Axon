@@ -1,0 +1,56 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:f="http://xmlns.jcp.org/jsf/core"
+  xmlns:h="http://xmlns.jcp.org/jsf/html" xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+  xmlns:ic="http://ivyteam.ch/jsf/component" xmlns:p="http://primefaces.org/ui"
+  xmlns:pe="http://primefaces.org/ui/extensions">
+<h:body>
+  <ui:composition template="/layouts/basic-10.xhtml">
+    <ui:define name="title">Dialog22</ui:define>
+    <ui:define name="content">
+
+      <h3>
+        This is an 
+        <a href="https://developer.axonivy.com/doc/">Html Dialog</a>
+        implemented with JSF and <a href="http://primefaces.org/">Primefaces</a> as widget library
+      </h3>
+
+      <h:form id="form">
+        <p:messages />
+        <p:panelGrid columns="2" layout="grid" styleClass="ui-panelgrid-blank ui-fluid" 
+          columnClasses="ui-g-12 ui-md-3 ui-lg-2, ui-g-12 ui-md-9 ui-lg-4, ui-g-12 ui-md-3 ui-lg-2, ui-g-12 ui-md-9 ui-lg-4">
+
+
+          
+          <p:outputLabel for="dataName" value="Name" />
+          <p:inputText id="dataName" value="#{data.data.name}"></p:inputText>
+          
+    
+          
+      
+          <p:outputLabel for="dataAlter" value="Alter" />
+          <p:inputText id="dataAlter" value="#{data.data.alter}"></p:inputText>
+          
+          <p:outputLabel for="dataKlasse" value="Klasse" />
+          <p:inputText id="dataKlasse" value="#{data.data.klasse}"></p:inputText>
+          
+          <p:outputLabel for="dataFreund" value="Freund" />
+          <p:inputText id="dataFreund" value="#{data.data.freund}"></p:inputText>
+          
+          <p:outputLabel for="dataLehrer" value="Lehrer" />
+          <p:inputText id="dataLehrer" value="#{data.data.lehrer}"></p:inputText>
+          
+          <p:outputLabel for="dataGroesse" value="Grösse" />
+          <p:inputText id="dataGroesse" value="#{data.data.groesse}"></p:inputText>
+
+        </p:panelGrid>
+        <br />
+        <div class="command-btns">
+          <p:commandLink id="cancel" actionListener="#{ivyWorkflowView.cancel()}" process="@this" value="Cancel" />
+          <p:commandButton id="proceed" actionListener="#{logic.close}" value="Proceed" update="form" icon="pi pi-check" />
+        </div>
+      </h:form>
+
+    </ui:define>
+  </ui:composition>
+</h:body>
+
+</html>

@@ -1,0 +1,11 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/data-class/11.4.0/data-class.json",
+  "simpleName" : "Dialog4Data",
+  "namespace" : "schnuppern.axon.Dialog4",
+  "isBusinessCaseData" : false,
+  "fields" : [ {
+    "name" : "data",
+    "type" : "schnuppern.axon.Data",
+    "modifiers" : [ "PERSISTENT" ]
+  } ]
+}

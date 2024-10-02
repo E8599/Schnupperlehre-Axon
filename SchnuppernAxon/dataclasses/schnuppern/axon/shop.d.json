@@ -1,0 +1,23 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/data-class/11.4.0/data-class.json",
+  "simpleName" : "shop",
+  "namespace" : "schnuppern.axon",
+  "isBusinessCaseData" : false,
+  "fields" : [ {
+    "name" : "name",
+    "type" : "String",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "alter",
+    "type" : "Number",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "wahrenkorb",
+    "type" : "List<schnuppern.axon.WahrenkorbProdukte>",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "total",
+    "type" : "Integer",
+    "modifiers" : [ "PERSISTENT" ]
+  } ]
+}

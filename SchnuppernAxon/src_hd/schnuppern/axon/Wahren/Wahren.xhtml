@@ -1,0 +1,129 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:ic="http://ivyteam.ch/jsf/component"
+	xmlns:p="http://primefaces.org/ui"
+	xmlns:pe="http://primefaces.org/ui/extensions">
+<h:body>
+	<ui:composition template="/layouts/basic-10.xhtml">
+		<ui:define name="title">Wahren</ui:define>
+		<ui:define name="content">
+
+			<h3>Wilkommen #{data.shop.name}</h3>
+			<h:form id="form">
+				<p:messages />
+				<p:panelGrid columns="2" layout="grid"
+					styleClass="ui-panelgrid-blank ui-fluid"
+					columnClasses="ui-g-12 ui-md-3 ui-lg-2, ui-g-12 ui-md-9 ui-lg-4, ui-g-12 ui-md-3 ui-lg-2, ui-g-12 ui-md-9 ui-lg-4">
+
+
+				</p:panelGrid>
+				<div class="card">
+					
+				</div>
+         <div class="card">
+    
+        <p:tabView>
+           
+            <p:tab title="Produkte">
+            <p:dataTable var="product" value="#{data.produkte}">
+						<p:column headerText="Name">
+							<p:outputLabel>Handy</p:outputLabel>
+							<h:outputText value="#{product.name}" />
+						</p:column>
+
+						<p:column headerText="Preis">
+							<h:outputText value="#{product.price}" />
+
+						</p:column>
+
+						<p:column headerText="Rating">
+							<h:outputText value="#{product.rating}" />
+
+						</p:column>
+
+						<p:column headerText="Genre">
+							<h:outputText value="#{product.genre}" />
+
+						</p:column>
+
+						<p:column headerText="Bild">
+						<img width="100px" src="#{product.picture}" />
+
+						</p:column>
+
+
+						<p:column headerText="Beschreibung">
+							<h:outputText value="#{product.description}" />
+
+						</p:column>
+
+					
+						<p:column headerText="Kaufen">
+							<p:commandButton id="Kaufen" actionListener="#{logic.toWahrenkorb(product.id,data.shop)}"
+								value="Kaufen" update="form" icon=" pi pi-shopping-cart" />
+						</p:column>
+					
+					</p:dataTable>
+                
+            </p:tab>
+            <p:tab>
+            
+                <f:facet name="title">
+                    <span>Wahrenkorb</span> 
+                </f:facet>
+                <p class="m-0">
+                
+                 <p:dataTable var="product" value="#{data.WahrenkorbProdukte}">
+						<p:column headerText="Name">
+							<p:outputLabel>Handy</p:outputLabel>
+							<h:outputText value="#{product.name}" />
+						</p:column>
+
+						<p:column headerText="Preis">
+							<h:outputText value="#{product.price}" />
+
+						</p:column>
+
+						
+
+						<p:column headerText="Bild">
+						<img width="100px" src="#{product.picture}" />
+
+						</p:column>
+
+                           <p:column headerText="Gesamtpreis">
+							<h:outputText value="#{data.wahrenkorbProdukte.total}" />
+
+					</p:column>
+					
+					</p:dataTable>
+                
+                
+               
+                </p>
+            </p:tab>
+            <p:tab title="Kaufen">
+                <p class="m-0">
+                </p>
+            </p:tab>
+        </p:tabView>
+    </div>
+    
+        <br />
+				<div class="command-btns">
+					<p:commandLink id="cancel"
+						actionListener="#{ivyWorkflowView.cancel()}" process="@this"
+						value="Cancel" />
+					<p:commandButton id="proceed" actionListener="#{logic.close}"
+						value="Proceed" update="form" icon="pi pi-shopping-bag
+" />
+				</div>
+			</h:form>
+
+		</ui:define>
+	</ui:composition>
+</h:body>
+
+</html>

@@ -1,0 +1,72 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/process/11.3.0/process.json",
+  "id" : "1924C040567CCCD5",
+  "config" : {
+    "data" : "schnuppern.axon.Data"
+  },
+  "elements" : [ {
+      "id" : "f0",
+      "type" : "RequestStart",
+      "name" : "start",
+      "config" : {
+        "signature" : "start"
+      },
+      "visual" : {
+        "at" : { "x" : 32, "y" : 64 }
+      },
+      "connect" : [
+        { "id" : "f2", "to" : "f3" }
+      ]
+    }, {
+      "id" : "f3",
+      "type" : "DialogCall",
+      "config" : {
+        "dialog" : "schnuppern.axon.Dialog24:start(schnuppern.axon.Data)",
+        "call" : {
+          "map" : {
+            "param.data" : "in"
+          }
+        },
+        "output" : {
+          "map" : {
+            "out" : "result.data"
+          }
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 248, "y" : 64 }
+      },
+      "connect" : [
+        { "id" : "f6", "to" : "f5" }
+      ]
+    }, {
+      "id" : "f5",
+      "type" : "DialogCall",
+      "config" : {
+        "dialog" : "schnuppern.axon.Dialog22:start(schnuppern.axon.Data)",
+        "call" : {
+          "map" : {
+            "param.data" : "in"
+          }
+        },
+        "output" : {
+          "map" : {
+            "out" : "result.data"
+          }
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 440, "y" : 64 }
+      },
+      "connect" : [
+        { "id" : "f4", "to" : "f1" }
+      ]
+    }, {
+      "id" : "f1",
+      "type" : "TaskEnd",
+      "visual" : {
+        "at" : { "x" : 616, "y" : 64 },
+        "labelOffset" : { "x" : 13, "y" : 33 }
+      }
+    } ]
+}

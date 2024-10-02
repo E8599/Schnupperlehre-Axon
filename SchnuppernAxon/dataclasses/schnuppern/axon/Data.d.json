@@ -1,0 +1,43 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/data-class/11.4.0/data-class.json",
+  "simpleName" : "Data",
+  "namespace" : "schnuppern.axon",
+  "isBusinessCaseData" : false,
+  "fields" : [ {
+    "name" : "basic",
+    "type" : "String",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "name",
+    "type" : "String",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "vorname",
+    "type" : "String",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "adresse",
+    "type" : "String",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "alter",
+    "type" : "Number",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "klasse",
+    "type" : "String",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "freund",
+    "type" : "String",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "lehrer",
+    "type" : "String",
+    "modifiers" : [ "PERSISTENT" ]
+  }, {
+    "name" : "groesse",
+    "type" : "Number",
+    "modifiers" : [ "PERSISTENT" ]
+  } ]
+}

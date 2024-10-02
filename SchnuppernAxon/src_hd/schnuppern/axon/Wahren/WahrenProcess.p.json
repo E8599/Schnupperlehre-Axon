@@ -1,0 +1,137 @@
+{
+  "$schema" : "https://json-schema.axonivy.com/process/11.3.0/process.json",
+  "id" : "1924C31161D95AB0",
+  "kind" : "HTML_DIALOG",
+  "config" : {
+    "data" : "schnuppern.axon.Wahren.WahrenData"
+  },
+  "elements" : [ {
+      "id" : "f0",
+      "type" : "HtmlDialogStart",
+      "name" : "start(shop)",
+      "config" : {
+        "signature" : "start",
+        "input" : {
+          "params" : [
+            { "name" : "shop", "type" : "schnuppern.axon.shop", "desc" : "" }
+          ],
+          "map" : {
+            "out.shop" : "param.shop"
+          }
+        },
+        "result" : {
+          "params" : [
+            { "name" : "shop", "type" : "schnuppern.axon.shop", "desc" : "" }
+          ],
+          "map" : {
+            "result.shop" : "in.shop"
+          }
+        },
+        "guid" : "1924C31161E517C3"
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 64 }
+      },
+      "connect" : [
+        { "id" : "f2", "to" : "f6" }
+      ]
+    }, {
+      "id" : "f1",
+      "type" : "HtmlDialogEnd",
+      "visual" : {
+        "at" : { "x" : 352, "y" : 64 },
+        "labelOffset" : { "x" : 10, "y" : 30 }
+      }
+    }, {
+      "id" : "f3",
+      "type" : "HtmlDialogEventStart",
+      "name" : "close",
+      "config" : {
+        "guid" : "1924C311622F15A5"
+      },
+      "visual" : {
+        "at" : { "x" : 96, "y" : 160 }
+      },
+      "connect" : [
+        { "id" : "f5", "to" : "f4" }
+      ]
+    }, {
+      "id" : "f4",
+      "type" : "HtmlDialogExit",
+      "visual" : {
+        "at" : { "x" : 224, "y" : 160 },
+        "labelOffset" : { "x" : 10, "y" : 30 }
+      }
+    }, {
+      "id" : "f6",
+      "type" : "Script",
+      "config" : {
+        "output" : {
+          "code" : [
+            "import schnuppern.axon.Product;",
+            "out.produkte = ivy.persistence.Shopdb.findAll(Product.class);"
+          ]
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 224, "y" : 64 }
+      },
+      "connect" : [
+        { "id" : "f7", "to" : "f1", "color" : "default" }
+      ]
+    }, {
+      "id" : "f9",
+      "type" : "HtmlDialogEnd",
+      "visual" : {
+        "at" : { "x" : 352, "y" : 256 },
+        "labelOffset" : { "x" : 10, "y" : 30 }
+      }
+    }, {
+      "id" : "f11",
+      "type" : "Script",
+      "config" : {
+        "output" : {
+          "code" : [
+            "import shop.Wahrenkorb;",
+            "",
+            "out.total = Wahrenkorb.getTotalPrice(in.shop.wahrenkorb);"
+          ]
+        }
+      },
+      "visual" : {
+        "at" : { "x" : 224, "y" : 256 }
+      },
+      "connect" : [
+        { "id" : "f12", "to" : "f9", "color" : "default" }
+      ]
+    }, {
+      "id" : "f8",
+      "type" : "HtmlDialogMethodStart",
+      "name" : "toWahrenkorb(Integer,shop)",
+      "config" : {
+        "signature" : "toWahrenkorb",
+        "input" : {
+          "params" : [
+            { "name" : "ProduktId", "type" : "Integer", "desc" : "" },
+            { "name" : "Shop", "type" : "schnuppern.axon.shop", "desc" : "" }
+          ],
+          "map" : { }
+        },
+        "result" : {
+          "params" : [
+            { "name" : "WahrenkorbProdukt", "type" : "schnuppern.axon.shop", "desc" : "" }
+          ],
+          "map" : {
+            "result.WahrenkorbProdukt" : "in.shop"
+          }
+        },
+        "guid" : "1924D39A7986F588"
+      },
+      "visual" : {
+        "at" : { "x" : 104, "y" : 256 }
+      },
+      "connect" : [
+        { "id" : "f10", "to" : "f11" }
+      ]
+    } ]
+}
